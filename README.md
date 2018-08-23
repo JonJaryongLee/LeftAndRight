@@ -22,3 +22,4 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 2. Favicon설정 완료
 3. 기본 폰트는 나눔바른고딕입니다.
 4. Bootstrap Vue 를 Import하였습니다.
+5. fontAwesome cdn 추가

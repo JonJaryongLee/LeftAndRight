@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <LeftAndRightHeader></LeftAndRightHeader>
-    <LeftAndRightInput></LeftAndRightInput>
-    <LeftAndRightList></LeftAndRightList>
-    <LeftAndRightFooter></LeftAndRightFooter>
+    <AppLeft></AppLeft>
+    <AppRight></AppRight>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
@@ -15,18 +14,16 @@
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-  import LeftAndRightHeader from './components/LeftAndRightHeader.vue'
-  import LeftAndRightInput from './components/LeftAndRightInput.vue'
-  import LeftAndRightList from './components/LeftAndRightList.vue'
-  import LeftAndRightFooter from './components/LeftAndRightFooter.vue'
+  import AppLeft from './components/AppLeft.vue'
+  import AppRight from './components/AppRight.vue'
+  import AppFooter from './components/AppFooter.vue'
 
   
   export default{
     components: {
-      'LeftAndRightHeader': LeftAndRightHeader,
-      'LeftAndRightList': LeftAndRightList,
-      'LeftAndRightInput':LeftAndRightInput,
-      'LeftAndRightFooter':LeftAndRightFooter
+      'AppLeft': AppLeft,
+      'AppRight': AppRight,
+      'AppFooter':AppFooter
     }
   }
 </script>
