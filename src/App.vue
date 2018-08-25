@@ -10,7 +10,7 @@
         </b-col>
     </b-row>
     <b-row align-v="end">
-        <b-col align-self="end">
+        <b-col align-self="center">
             <AppFooter></AppFooter>
         </b-col>
     </b-row>
