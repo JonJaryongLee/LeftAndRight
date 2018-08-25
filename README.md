@@ -25,4 +25,5 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 5. fontAwesome cdn 추가
 
 ## 8월 25일
-하단부 버튼 추가. 버튼을 누르면 각 언론사 모바일 창이 뜨도록 설정 (일부 언론사는 pc에서 모바일 주소로 안 들어가짐)
+1. 하단부 버튼 추가. 버튼을 누르면 각 언론사 모바일 창이 뜨도록 설정 (일부 언론사는 pc에서 모바일 주소로 안 들어가짐)
+2. 그리드 짜는중
