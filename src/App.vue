@@ -1,8 +1,20 @@
 <template>
   <div id="app">
-    <AppLeft></AppLeft>
-    <AppRight></AppRight>
-    <AppFooter></AppFooter>
+    <b-container class="layout">
+    <b-row>
+        <b-col>
+            <AppLeft></AppLeft>
+        </b-col>
+        <b-col>
+            <AppRight></AppRight>
+        </b-col>
+    </b-row>
+    <b-row align-v="end">
+        <b-col align-self="end">
+            <AppFooter></AppFooter>
+        </b-col>
+    </b-row>
+    </b-container>
   </div>
 </template>
 
