@@ -34,3 +34,4 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 3. 아래 footer 둘로 나누고 위치바꿈
 4. 전체 레이아웃에 flex적용
 5. 전체 레이아웃 박스사이징 border-box로 설정
+6. 왼쪽과 오른쪽 레이아웃에 언론사 홈페이지 이식시킴. iframe size 1by1
