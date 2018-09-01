@@ -2,7 +2,7 @@
 	<div>
 		<b-embed type="iframe"
           aspect="1by1"
-          src="http://m.hani.co.kr/"
+          src=""
           allowfullscreen
   		></b-embed>
   	</div>

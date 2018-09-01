@@ -1,16 +1,28 @@
 <template>
 	<div>
-  		<b-embed type="iframe"
+		<button v-on:click="test">click</button>
+  		<!-- <b-embed type="iframe"
           aspect="1by1"
-          src="http://m.chosun.com/"
+          src=""
           allowfullscreen
-  		></b-embed>
+  		></b-embed> -->
 	</div>
 </template>
 
 <script type="text/javascript">
 	export default{
-
+		props:['propsdata'],
+		data(){
+			return{
+				
+			}
+		},
+		
+		methods: {
+			test(){
+				console.log(this.propsdata);
+			}
+		}
 	}
 </script>
 
