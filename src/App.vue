@@ -11,7 +11,7 @@
             <AppLeft></AppLeft>
         </b-col>
         <b-col class="right">
-            <AppRight v-bind:propsdata="address"></AppRight>
+            <AppRight></AppRight>
         </b-col>
     </b-row>
     <b-row>
@@ -47,7 +47,7 @@
   export default{
     data(){
       return {
-        address:'아무 주소도 입력되지 않았다.'
+        address:'no address'
       }
     },
     methods: {
@@ -55,7 +55,7 @@
         console.log("여기는 App.vue다! AppRightFooter.vue로부터 주소를  받았다! 해당 주소는 "+receivedAddress);
         this.address=receivedAddress;
         console.log("App.vue의 변수 address를 "+ this.address+"로 변경한다.");
-        console.log("이제 AppRight.vue로 변수 address를 넘겨준다. 다시 클릭해보시오.")
+        document.getElementById("right").src = this.address;
       }
     },
     components: {

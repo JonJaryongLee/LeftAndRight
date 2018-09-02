@@ -2,8 +2,9 @@
 	<div>
 		<b-embed type="iframe"
           aspect="1by1"
-          src=""
+          src="http://m.hani.co.kr"
           allowfullscreen
+          
   		></b-embed>
   	</div>
 </template>

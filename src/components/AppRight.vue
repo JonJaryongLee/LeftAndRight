@@ -1,27 +1,21 @@
 <template>
 	<div>
-		<button v-on:click="test">click</button>
-  		<!-- <b-embed type="iframe"
+  		<b-embed type="iframe"
           aspect="1by1"
-          src=""
+          src="http://m.chosun.com/"
           allowfullscreen
-  		></b-embed> -->
+          id="right"
+  		></b-embed>
 	</div>
 </template>
 
 <script type="text/javascript">
 	export default{
-		props:['propsdata'],
 		data(){
 			return{
-				
 			}
 		},
-		
 		methods: {
-			test(){
-				console.log(this.propsdata);
-			}
 		}
 	}
 </script>
