@@ -57,8 +57,8 @@
         //만약 조중동 중 하나이면 오른쪽 화면을 업데이트, 아니면 왼쪽으로 업데이트
         if(
             this.address=="http://m.chosun.com"||
-            this.address=="https://mnews.joins.com"||
-            this.address=="http://m.donga.com"
+            this.address=="https://mnews.joins.com/"||
+            this.address=="http://m.munhwa.com/"
           ) 
         {
           document.getElementById("right").src = this.address;

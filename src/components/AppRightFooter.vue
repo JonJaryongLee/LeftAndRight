@@ -2,7 +2,7 @@
 	<div>
 	  		<b-button id="cs" :size="'lg'" :variant="'danger'" v-on:click="allocateAddress('cs')">조선일보</b-button>
 	  		<b-button id="ja" :size="'lg'" :variant="'danger'" v-on:click="allocateAddress('ja')">중앙일보</b-button>
-	  		<b-button id="da" :size="'lg'" :variant="'danger'" v-on:click="allocateAddress('da')">동아일보</b-button>
+	  		<b-button id="mh" :size="'lg'" :variant="'danger'" v-on:click="allocateAddress('mh')">문화일보</b-button>
 	</div>
 
 
@@ -22,13 +22,13 @@
 				}
 				else if(id=="ja")
 				{
-					address="https://mnews.joins.com";
+					address="https://mnews.joins.com/";
 					this.$emit('allocateAddress',address);
 					
 				}
-				else if(id=="da")
+				else if(id=="mh")
 				{
-					address="http://m.donga.com";
+					address="http://m.munhwa.com/";
 					this.$emit('allocateAddress',address);
 					
 				}
