@@ -17,6 +17,17 @@ npm run build
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+## 교수님 의견
+
+김민기 교수님
+커서가 움직임에 따라 단어를 하이라이팅해서 클릭 시 반대편 섹션에 바로 관련기사 검색이 가능하게. 
+
+이수원 교수님
+우선 타겟을 정해야한다. 모든사람인가? 특정인인가?
+현재 두 개의 웹페이지를 섹션에 가두어 띄우는 게 전부다. 단순히 보여주는 것 이상이 필요하다.
+하나의 섹션에서 기사를 클릭하면 다른 섹션에서 관련기사를 자동으로 뜨게 하면 어떨까? 이미지검색, 제목의 특정 단어, 기사 내용안의 단어들을 이용해 알고리즘을 짜서 구현하면 될 것.
+
+
 ## 초기작업내용
 1. Vue.js Webpack Simple로 초기구성을 하였습니다.
 2. Favicon설정 완료
