@@ -4,7 +4,7 @@
           aspect="1by1"
           src="http://m.hani.co.kr"
           allowfullscreen
-          
+          id="left"
   		></b-embed>
   	</div>
 </template>

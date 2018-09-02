@@ -16,7 +16,7 @@
     </b-row>
     <b-row>
         <b-col class = "leftFooter">
-            <AppLeftFooter></AppLeftFooter>
+            <AppLeftFooter v-on:allocateAddress="allocateAddress"></AppLeftFooter>
         </b-col>
         <b-col class ="rightFooter">
             <AppRightFooter v-on:allocateAddress="allocateAddress"></AppRightFooter>
@@ -52,10 +52,21 @@
     },
     methods: {
       allocateAddress(receivedAddress){
-        console.log("여기는 App.vue다! AppRightFooter.vue로부터 주소를  받았다! 해당 주소는 "+receivedAddress);
         this.address=receivedAddress;
-        console.log("App.vue의 변수 address를 "+ this.address+"로 변경한다.");
-        document.getElementById("right").src = this.address;
+        
+        //만약 조중동 중 하나이면 오른쪽 화면을 업데이트, 아니면 왼쪽으로 업데이트
+        if(
+            this.address=="http://m.chosun.com"||
+            this.address=="https://mnews.joins.com"||
+            this.address=="http://m.donga.com"
+          ) 
+        {
+          document.getElementById("right").src = this.address;
+        }
+        else{
+          document.getElementById("left").src = this.address;
+        }
+
       }
     },
     components: {
