@@ -60,3 +60,10 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 	- 어제는 AppRightFooter.vue에서 생성한 주소를 App.vue를 거쳐 AppRight.vue로 보내버렸는데 AppRight.vue에서 업데이트 인식을 못해서 즉시 연동이 안 되었음. 이에 App.vue에서 직접 AppRight.vue의 iframe src를 바꾸는 명령을 집어넣음. allocateAddress메소드 내부의 document.getElementById("~").src 참고할 것.
 2. Left영역도 똑같이 적용.
 3. 동아일보 모바일 웹 페이지 적용이 안 되어 문화일보로 변경
+
+## 9월 4일 회의내용
+1. 밑에 버튼 없앨 것
+2. 첫 이용시 사용자가 좌파와 우파 신문 중에 뭘 볼지 결정하게 하고 그걸 쿠키로 써서 다음에 그대로 보게 적용 (문윤기가 할 일)
+3. 한쪽 진영의 페이지를 서핑하다 기사를 클릭하면 반대편 칸에 이 기사와 관련한 상대진영 기사를 리스트업
+4. 그 중 하나를 클릭하면 그 기사로 이동한다.
+5. 누른 기사 주소나 제목을  백엔드로 준다.
