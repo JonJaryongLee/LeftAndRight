@@ -67,3 +67,6 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 3. 한쪽 진영의 페이지를 서핑하다 기사를 클릭하면 반대편 칸에 이 기사와 관련한 상대진영 기사를 리스트업
 4. 그 중 하나를 클릭하면 그 기사로 이동한다.
 5. 누른 기사 주소나 제목을  백엔드로 준다.
+
+## 9월 4일 작업내용
+1. 아래 버튼 삭제

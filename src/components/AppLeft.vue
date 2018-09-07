@@ -1,20 +1,27 @@
 <template>
-	<div>
-		<b-embed type="iframe"
-          aspect="1by1"
-          src="http://m.hani.co.kr"
-          allowfullscreen
-          id="left"
-  		></b-embed>
-  	</div>
+	<div class="showNews shadow">
+		<iframe 
+      src="http://m.hani.co.kr" 
+      height="750px" 
+      width="540px" 
+      id="left"
+    >
+      
+    </iframe>
+  </div>
 </template>
 
 <script type="text/javascript">
 	export default{
-
+    methods: {
+      
+    }
 	}
 </script>
 
 <style type="text/css">
-	
+
 </style>
+
+
+
