@@ -70,3 +70,6 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ## 9월 4일 작업내용
 1. 아래 버튼 삭제
+
+## 9월 7일 작업내용
+1. 오른쪽 레이아웃을 결과가 뜨는 페이지로 변경, 레이아웃 창 크기 늘림.
