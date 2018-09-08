@@ -1,6 +1,9 @@
 <template>
-	<div class="moreNews shadow">
+	<div class="moreNews">
 		<article>
+			<br>
+			<br>
+			<br>
 			<br>
 			<br>
 			조선일보 관련기사를 검색할까요?
@@ -33,14 +36,13 @@
 <style scoped>
 
 	.moreNews{
-		height:750px;
+		height:910px;
 		width:540px;
-		background-color: b;
+		border-style:solid;
 	}
 	article{
 		font-family: 'Nanum Barun Gothic', sans-serif;
 		font-size: 1.9rem;
-		/*color: #43A8BBFF;*/
 		text-align: center;
 		padding: 50px;
 		
@@ -54,7 +56,6 @@
 	}
 
 	.newsBtn{
-		/*color: #43A8BBFF;*/
 		width: 200px;
 		height: 200px;
 		font-size: 10rem;

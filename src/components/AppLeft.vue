@@ -1,9 +1,10 @@
 <template>
-	<div class="showNews shadow">
-		<iframe 
+	<div class="showNews">
+    <h1>Left And Right</h1>
+		<iframe
       src="http://m.hani.co.kr" 
-      height="750px" 
-      width="540px" 
+      height="800px" 
+      width="530px" 
       id="left"
     >
       
@@ -20,6 +21,22 @@
 </script>
 
 <style type="text/css">
+  .showNews{
+    height:910px;
+    width:540px;
+    border-style:solid;
+  }
+  h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size:4rem;
+    font-weight: bold;
+    color: #FF7F00;
+    padding: 10px;
+  }
+  #left
+  {
+    border-style: none;
+  }
 
 </style>
 

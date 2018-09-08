@@ -1,18 +1,13 @@
 <template>
   <div id="app">
     <b-container class="layout">
-    <b-row>
-      <b-col class ="header">
-        <AppHeader></AppHeader>
-      </b-col>
-    </b-row>
-    <b-row>
-        <b-col class="left">
-            <AppLeft></AppLeft>
-        </b-col>
-        <b-col class="right">
-            <AppRight v-on:sendPageData="sendPageData"></AppRight>
-        </b-col>
+      <b-row>
+          <b-col class="left">
+              <AppLeft></AppLeft>
+          </b-col>
+          <b-col class="right">
+              <AppRight v-on:sendPageData="sendPageData"></AppRight>
+          </b-col>
     </b-row>
     </b-container>
   </div>
@@ -29,18 +24,14 @@
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-  import AppHeader from './components/AppHeader.vue'
   import AppLeft from './components/AppLeft.vue'
   import AppRight from './components/AppRight.vue'
-  import AppSearched from './components/AppSearched.vue'
 
   
   export default{
     components: {
-      'AppHeader': AppHeader,
       'AppLeft': AppLeft,
-      'AppRight': AppRight,
-      'AppSearched': AppSearched
+      'AppRight': AppRight
     },
 
     data(){
@@ -71,10 +62,8 @@
   box-sizing:border-box;
 }
 
-.header{
+.left{
   font-family: 'Ubuntu', sans-serif;
-  padding:15px;
-  text-align: center;
 
 }
 </style>
