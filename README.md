@@ -73,3 +73,6 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ## 9월 7일 작업내용
 1. 오른쪽 레이아웃을 결과가 뜨는 페이지로 변경, 레이아웃 창 크기 늘림.
+
+## 9월 8일 작업내용
+전체적인 스타일을 바꿀 계획임. header를 없애고 제목을 left로 뺐음. 
