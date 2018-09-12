@@ -25,7 +25,7 @@
   import 'bootstrap-vue/dist/bootstrap-vue.css'
 
   import AppLeft from './components/AppLeft.vue'
-  import AppRight from './components/AppRight.vue'
+  import AppRight from './components/AppRight/AppRight.vue'
 
   
   export default{

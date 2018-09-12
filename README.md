@@ -76,3 +76,7 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ## 9월 8일 작업내용
 전체적인 스타일을 바꿀 계획임. header를 없애고 제목을 left로 뺐음. 
+
+## 9월 11일
+1.사용자 최초 사용시 큰 아이콘과 설명이 뜨게 함. 아이콘을 누를 경우 작은 아이콘으로 바뀜.
+2.버튼 누르면 리스트 뜨게 만듦
