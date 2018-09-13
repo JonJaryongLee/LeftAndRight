@@ -2,7 +2,7 @@
 	<div class="showNews">
     <h1>Left And Right</h1>
 		<iframe
-      src="http://211.233.22.224/" 
+      src="" 
       height="670px" 
       width="530px" 
       id="left"

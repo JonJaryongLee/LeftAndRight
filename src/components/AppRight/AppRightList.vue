@@ -3,8 +3,13 @@
 		<article>
 			<br>
 			<br>
-			
-				<button class="button button-rounded button-tiny" v-for="dataTitle in dataTitles" v-on:click="showPage(dataTitle)">{{dataTitle}}</button>
+				<button class="button button-rounded button-tiny" v-for="dataTitle in dataTitles" v-on:click="showPage(dataTitle)">
+
+					{{dataTitle}} 
+					<br> 
+					<b-badge v-for="dataDate in dataDates">{{dataDate}}</b-badge>
+	
+				</button>
 		</article>
 	</div>
 </template>
@@ -75,10 +80,9 @@
 		line-height: 1.5em;
 		font-weight:bold;
 		float:left;
-		text-align: left;
+		text-align: right;
 		width: 511px;
 		height:100px;
 		margin: 10px;
 	}
-
 </style>
