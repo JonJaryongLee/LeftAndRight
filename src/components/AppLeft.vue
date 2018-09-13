@@ -2,7 +2,7 @@
 	<div class="showNews">
     <h1>Left And Right</h1>
 		<iframe
-      src="http://m.hani.co.kr" 
+      src="http://211.233.22.224/" 
       height="670px" 
       width="530px" 
       id="left"
@@ -25,6 +25,7 @@
     height:780px;
     width:540px;
     border-style:solid;
+    background-color: #F6F6F8;
   }
   h1{
     font-family: 'Ubuntu', sans-serif;

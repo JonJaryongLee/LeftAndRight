@@ -118,6 +118,7 @@
 		height:780px;
 		width:540px;
 		border-style:solid;
+		background-color: #F6F6F8;
 	}
 	article{
 		font-family: 'Nanum Barun Gothic', sans-serif;
