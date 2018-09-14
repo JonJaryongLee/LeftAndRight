@@ -14,11 +14,13 @@
 
 <script type="text/javascript">
 	export default{
-
+    methods: {
+      
+    }
 	}
 </script>
 
-<style scoped>
+<style type="text/css">
   .showNews{
     height:780px;
     width:540px;

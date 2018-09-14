@@ -10,11 +10,8 @@
 			<br>
 			<br>
 			<br>
-			<transition name="iframeAppar">
-				<AppRighIframe v-if="rightIframeShow"></AppRighIframe>
-			</transition>
 			<transition name="listAppear">
-				<AppRightList v-if="listShow" v-on:showPage="rightIframeShow"></AppRightList>
+				<AppRightList v-if="listShow"></AppRightList>
 			</transition>
 			<br>
 			<br>
@@ -28,8 +25,7 @@
 			<br>
 		<transition name="bigBtnFade">
 			<span v-if="bigBtnShow" class="bigNewsContainer">
-				<button class="bigNewsBtn button button-box button-tiny"
-				 v-on:click="bigSendPageData">
+				<button class="bigNewsBtn button button-box button-tiny" v-on:click="bigSendPageData">
 					<i class="far fa-newspaper"></i>
 				</button>
 			</span>
@@ -51,8 +47,7 @@
 				bigBtnShow:true,
 				titleShow:true,
 				smallBtnShow:false,
-				listShow:false,
-				rightIframeShow:false
+				listShow:false
 			}
 		},
 		methods: {
@@ -65,11 +60,6 @@
 			},
 			smallSendPageData(){
 				this.$emit('sendPageData')
-			},
-			RightIframeShow(){
-				this.listShow=false;
-				this.rightIframeShow=true;
-				document.getElementById("right").src = this.dataAddresses[i];
 			}
 		}
 	}
