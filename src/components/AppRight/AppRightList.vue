@@ -3,10 +3,12 @@
 		<article>
 			<br>
 			<br>
-				<button class="button button-rounded button-tiny" v-for="i in 5" v-on:click="showPage(dataTitles[i-1])">
-					{{dataTitles[i-1]}} 
+				<button class="button button-rounded button-tiny" v-for="dataTitle in dataTitles" v-on:click="showPage(dataTitle)">
+
+					{{dataTitle}} 
 					<br> 
-					<b-badge>{{dataDates[i-1]}}</b-badge>
+					<b-badge v-for="dataDate in dataDates">{{dataDate}}</b-badge>
+	
 				</button>
 		</article>
 	</div>
