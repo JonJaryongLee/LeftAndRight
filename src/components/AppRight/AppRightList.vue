@@ -62,7 +62,9 @@
 			showPage(dataTitle){
 				for(let i=0; i<this.dataTitles.length;i++){
 					if (dataTitle==this.dataTitles[i]) {
-						window.open(this.dataAddresses[i]);
+						console.log(this.dataAddresses[i]);
+						document.getElementById("right").src = this.dataAddresses[i];
+						this.$emit('RightIframeShow');
 					}
 				}
 			}
