@@ -60,8 +60,8 @@
 				this.titleShow=false;
 				this.bigBtnShow=false;
 				this.smallBtnShow=true;
+				this.listShow=true;
 				this.$emit('sendPageData')
-				setTimeout(() => this.listShow = true, 450);
 			},
 			smallSendPageData(){
 				this.$emit('sendPageData')
@@ -82,19 +82,20 @@
 <style scoped>
 
 	.titleFade-leave-active {
-	  transition: opacity 0.4s;
+	  transition: opacity 1s;
 	}
 	.titleFade-leave-to {
 	  opacity: 0;
 	}
 
 	.bigBtnFade-leave-active{
-		transition: opacity 0.4s;
+		transition: opacity 1s;
 	}
 	.bigBtnFade-leave-to{
 		opacity: 0;
 	}
 
+	
 	.smallBtnAppear-enter
 	{
 		opacity: 0;
