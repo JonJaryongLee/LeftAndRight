@@ -85,3 +85,4 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 ## 9월 13일 작업내용
 1. 리스트를 버튼으로 예쁘게 꾸밈
 2. 버튼을 누르면 해당 신문기사가 새 창으로 뜨게 함. 추후 아이프레임에 뜨도록 조치할 예정
+3. 날짜 뱃지 부착함
