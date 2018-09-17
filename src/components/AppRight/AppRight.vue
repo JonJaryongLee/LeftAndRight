@@ -1,5 +1,5 @@
 <template>
-	<div class="moreNews">
+	<div class="moreNews shadow">
 		<transition name="smallBtnAppear">
 			<span v-if="smallBtnShow" class="smallNewsContainer">
 				<button class="smallNewsBtn button button-box button-tiny" v-on:click="smallSendPageData">
@@ -10,8 +10,14 @@
 			<br>
 			<br>
 			<br>
+			<transition name="iframeAppear">
+				<AppRighIframe v-if="rightIframeShow" v-bind:propsdata="rightAddress" ></AppRighIframe>
+			</transition>
 			<transition name="listAppear">
-				<AppRightList v-if="listShow"></AppRightList>
+				<AppRightList 
+					v-if="listShow"
+					v-on:showPage="showPage"
+				></AppRightList>
 			</transition>
 			<br>
 			<br>
@@ -47,7 +53,9 @@
 				bigBtnShow:true,
 				titleShow:true,
 				smallBtnShow:false,
-				listShow:false
+				listShow:false,
+				rightIframeShow: false,
+				rightAddress:""
 			}
 		},
 		methods: {
@@ -55,11 +63,16 @@
 				this.titleShow=false;
 				this.bigBtnShow=false;
 				this.smallBtnShow=true;
-				this.listShow=true;
 				this.$emit('sendPageData')
+				setTimeout(() => this.listShow = true, 450);
 			},
 			smallSendPageData(){
 				this.$emit('sendPageData')
+			},
+			showPage(address){
+				this.listShow=false;
+				this.rightAddress=address;
+				setTimeout(() => this.rightIframeShow = true, 1200);
 			}
 		}
 	}
@@ -72,20 +85,19 @@
 <style scoped>
 
 	.titleFade-leave-active {
-	  transition: opacity 1s;
+	  transition: opacity 0.4s;
 	}
 	.titleFade-leave-to {
 	  opacity: 0;
 	}
 
 	.bigBtnFade-leave-active{
-		transition: opacity 1s;
+		transition: opacity 0.4s;
 	}
 	.bigBtnFade-leave-to{
 		opacity: 0;
 	}
 
-	
 	.smallBtnAppear-enter
 	{
 		opacity: 0;
@@ -114,10 +126,31 @@
 		opacity: 1;
 	}
 
+	.listAppear-leave-active {
+	  transition: opacity 1s;
+	}
+	.listAppear-leave-to {
+	  opacity: 0;
+	}
+
+	.iframeAppear-enter
+	{
+		opacity: 0;
+	}
+
+	.iframeAppear-enter-active
+	{
+		transition: opacity 3s;
+	}
+	.iframeAppear-enter-to
+	{
+		opacity: 1;
+	}
+
 	.moreNews{
 		height:780px;
 		width:540px;
-		border-style:solid;
+		border-style:none;
 		background-color: #F6F6F8;
 	}
 	article{
@@ -155,5 +188,8 @@
 		
 	}
 
+  .shadow{
+ 		 box-shadow: 5px 10px 10px rgba(0,0,0,0.03)
+	}
 </style>
 

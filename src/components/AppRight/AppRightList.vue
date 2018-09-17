@@ -60,9 +60,11 @@
 		},
 		methods: {
 			showPage(dataTitle){
+				let address;
 				for(let i=0; i<this.dataTitles.length;i++){
 					if (dataTitle==this.dataTitles[i]) {
-						window.open(this.dataAddresses[i]);
+						address=this.dataAddresses[i];
+						this.$emit('showPage',address);
 					}
 				}
 			}

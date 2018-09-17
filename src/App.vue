@@ -14,8 +14,6 @@
 </template>
 
 
-
-
 <script>
   // bootstrap
   import Vue from 'vue'
@@ -32,6 +30,7 @@
     components: {
       'AppLeft': AppLeft,
       'AppRight': AppRight
+
     },
 
     data(){
@@ -43,7 +42,7 @@
 
     methods: {
       sendPageData(){
-        this.pageData = document.getElementById("left");
+        this.pageData = document.getElementById("leftIframe");
         console.log(this.pageData);
         axios.post('/url', 
           this.pageData)
@@ -65,6 +64,7 @@
 
 .left{
   font-family: 'Ubuntu', sans-serif;
-
 }
+
+
 </style>
