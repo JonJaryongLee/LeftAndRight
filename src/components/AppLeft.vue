@@ -28,8 +28,8 @@
   h1{
     font-family: 'Ubuntu', sans-serif;
     font-size:4rem;
-    font-weight: bold;
-    color: #FF7F00;
+    font-weight: 900;
+    color: orange;
     padding: 10px;
   }
   #leftIframe

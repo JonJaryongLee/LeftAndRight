@@ -3,7 +3,15 @@
 		<transition name="smallBtnAppear">
 			<span v-if="smallBtnShow" class="smallNewsContainer">
 				<button class="smallNewsBtn button button-box button-tiny" v-on:click="smallSendPageData">
-				<i class="far fa-newspaper"></i>
+					<i class="far fa-newspaper"></i>
+				</button>
+			</span>
+		</transition>
+
+		<transition name="undoBtnAppear">
+			<span v-if="undoShow" class="undoContainer">
+				<button class="undoBtn button button-box button-tiny" v-on:click="returnToList">
+					<i class="fas fa-undo"></i>
 				</button>
 			</span>
 		</transition>
@@ -53,6 +61,7 @@
 				bigBtnShow:true,
 				titleShow:true,
 				smallBtnShow:false,
+				undoShow:false,
 				listShow:false,
 				rightIframeShow: false,
 				rightAddress:""
@@ -71,8 +80,16 @@
 			},
 			showPage(address){
 				this.listShow=false;
+				this.smallBtnShow=false;
+				setTimeout(() => this.undoShow = true, 1200);
 				this.rightAddress=address;
 				setTimeout(() => this.rightIframeShow = true, 1200);
+			},
+			returnToList(){
+				this.undoShow=false;
+				setTimeout(() => this.smallBtnShow = true, 1200);
+				this.rightIframeShow=false;
+				setTimeout(() => this.listShow = true, 1200);
 			}
 		}
 	}
@@ -112,6 +129,34 @@
 		opacity: 1;
 	}
 
+	.smallBtnAppear-leave-active {
+	  transition: opacity 1s;
+	}
+	.smallBtnAppear-leave-to {
+	  opacity: 0;
+	}
+
+	.undoBtnAppear-enter
+	{
+		opacity: 0;
+	}
+
+	.undoBtnAppear-enter-active
+	{
+		transition: opacity 2s;
+	}
+	.undoBtnAppear-enter-to
+	{
+		opacity: 1;
+	}
+
+	.undoBtnAppear-leave-active {
+	  	transition: opacity 1s;
+	}
+	.undoBtnAppear-leave-to {
+		opacity: 0;
+	}
+
 	.listAppear-enter
 	{
 		opacity: 0;
@@ -145,6 +190,12 @@
 	.iframeAppear-enter-to
 	{
 		opacity: 1;
+	}
+	.iframeAppear-leave-active {
+	  transition: opacity 1s;
+	}
+	.iframeAppear-leave-to {
+	  opacity: 0;
 	}
 
 	.moreNews{
@@ -182,9 +233,20 @@
 
 	}
 	.smallNewsBtn{
-		width: 100px;
-		height: 90px;
+		width: 90px;
+		height: 80px;
 		font-size: 5rem;
+		
+	}
+	.undoContainer{
+		border-radius: 10px 10px 10px 10px;
+		float: right;
+
+	}
+	.undoBtn{
+		width: 90px;
+		height: 70px;
+		font-size: 4rem;
 		
 	}
 

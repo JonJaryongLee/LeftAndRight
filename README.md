@@ -92,3 +92,6 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ## 9월 15일 작업내용
 1. 리스트를 누르면 해당 기사의 아이프레임이 뜨게 조치함. 
+
+## 9월 19일 작업내용
+1. undo버튼 만듦.
