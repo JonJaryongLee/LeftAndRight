@@ -95,3 +95,4 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ## 9월 19일 작업내용
 1. undo버튼 만듦.
+2. left와 right iframe의 높이 맞춤.

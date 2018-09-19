@@ -2,7 +2,7 @@
 	<div class="showNews shadow">
     <h1>Left And Right</h1>
 		<iframe
-      src="http://m.chosun.com/" 
+      src="http://m.hani.co.kr" 
       height="670px" 
       width="530px" 
       id="leftIframe"

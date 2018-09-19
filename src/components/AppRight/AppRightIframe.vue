@@ -1,7 +1,7 @@
 <template>
 
 	<div class="showRightNews">
-		<br>
+    <article class="emptyBox"></article>
 		<iframe
       	src="http://m.chosun.com/" 
       	height="670px" 
@@ -33,6 +33,10 @@
   #rightIframe
   {
     border-style: none;
+  }
+
+  .emptyBox{
+    height: 34px;
   }
 
 </style>
