@@ -101,3 +101,4 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 1. 화살표 바꿈
 2. axios 손보는중
 3. 검색기능 제작중
+4. 모달 제작중

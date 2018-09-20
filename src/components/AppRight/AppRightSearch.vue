@@ -7,15 +7,29 @@
         <article class="searchBtnUpperEmpty"></article>
         <i class="searchBtn fas fa-search" aria-hidden="true"></i>
       </span>
+      
+      <modal v-if="showModal" @close="showModal=false">
+        <h3 slot="header">경고</h3>
+        <span slot="body" @click="showModal=false">
+          검색어를 입력하세요.
+          <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
+        </span>
+      </modal>
+
     </article>
   </div>
 </template>
 
 <script>
+import Modal from './common/Modal.vue'
 	export default{
+    components:{
+      Modal: Modal
+    },
     data(){
       return {
-        newSearchData:''
+        newSearchData:'',
+        showModal:false
       }
     },
     methods:{
@@ -25,6 +39,8 @@
           let value = this.newSearchData && this.newSearchData.trim();
           localStorage.setItem(this.newSearchData,this.newSearchData);
           this.clearSearch();
+        } else{
+          this.showModal = !this.showModal;
         }
         
     },
@@ -78,8 +94,9 @@
     color:white;
     height:50px;
     /*vertical-align: middle;*/
-
-
+  }
+  .closeModalBtn{
+    color:orange;
   }
 
 </style>
