@@ -11,7 +11,7 @@
 		<transition name="undoBtnAppear">
 			<span v-if="undoShow" class="undoContainer">
 				<button class="undoBtn button button-box button-tiny" v-on:click="returnToList">
-					<i class="fas fa-undo"></i>
+					<i class="fas fa-arrow-left"></i>
 				</button>
 			</span>
 		</transition>
@@ -19,7 +19,10 @@
 			<br>
 			<br>
 			<transition name="iframeAppear">
-				<AppRighIframe v-if="rightIframeShow" v-bind:propsdata="rightAddress" ></AppRighIframe>
+				<AppRightIframe v-if="rightIframeShow" v-bind:propsdata="rightAddress" ></AppRightIframe>
+			</transition>
+			<transition name="searchAppear">
+				<AppRightSearch v-if="searchShow"></AppRightSearch>
 			</transition>
 			<transition name="listAppear">
 				<AppRightList 
@@ -49,11 +52,13 @@
 
 <script type="text/javascript">
 	import AppRightList from './AppRightList'
-	import AppRighIframe from './AppRightIframe'
+	import AppRightIframe from './AppRightIframe'
+	import AppRightSearch from './AppRightSearch'
 	export default{
 		components:{
 			'AppRightList':AppRightList,
-			'AppRighIframe':AppRighIframe
+			'AppRightIframe':AppRightIframe,
+			'AppRightSearch':AppRightSearch
 		}
 		,
 		data(){
@@ -62,6 +67,7 @@
 				titleShow:true,
 				smallBtnShow:false,
 				undoShow:false,
+				searchShow:false,
 				listShow:false,
 				rightIframeShow: false,
 				rightAddress:""
@@ -73,6 +79,7 @@
 				this.bigBtnShow=false;
 				this.smallBtnShow=true;
 				this.$emit('sendPageData')
+				setTimeout(() => this.searchShow = true, 450);
 				setTimeout(() => this.listShow = true, 450);
 			},
 			smallSendPageData(){
@@ -80,6 +87,7 @@
 			},
 			showPage(address){
 				this.listShow=false;
+				this.searchShow=false;
 				this.smallBtnShow=false;
 				setTimeout(() => this.undoShow = true, 1200);
 				this.rightAddress=address;
@@ -89,6 +97,7 @@
 				this.undoShow=false;
 				setTimeout(() => this.smallBtnShow = true, 1200);
 				this.rightIframeShow=false;
+				setTimeout(() => this.searchShow = true, 1200);
 				setTimeout(() => this.listShow = true, 1200);
 			}
 		}
@@ -178,6 +187,27 @@
 	  opacity: 0;
 	}
 
+	.searchAppear-enter
+	{
+		opacity: 0;
+	}
+
+	.searchAppear-enter-active
+	{
+		transition: opacity 2s;
+	}
+	.searchAppear-enter-to
+	{
+		opacity: 1;
+	}
+
+	.searchAppear-leave-active {
+	  transition: opacity 1s;
+	}
+	.searchAppear-leave-to {
+	  opacity: 0;
+	}
+
 	.iframeAppear-enter
 	{
 		opacity: 0;
@@ -249,8 +279,7 @@
 		font-size: 4rem;
 		
 	}
-
-  .shadow{
+	.shadow{
  		 box-shadow: 5px 10px 10px rgba(0,0,0,0.03)
 	}
 </style>

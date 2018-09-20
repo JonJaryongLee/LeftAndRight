@@ -44,8 +44,11 @@
       sendPageData(){
         this.pageData = document.getElementById("leftIframe");
         console.log(this.pageData);
-        axios.post('/find_relation', 
-          this.pageData)
+        axios({
+          method: 'post',
+          url: 'http://find_relation',
+          data: this.pageData
+        })
         .then(function(response) {console.log(response);})
         .catch(function(error) {console.log(error);});
       }

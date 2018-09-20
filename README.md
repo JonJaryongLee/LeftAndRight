@@ -96,3 +96,8 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 ## 9월 19일 작업내용
 1. undo버튼 만듦.
 2. left와 right iframe의 높이 맞춤.
+
+## 9월 20일 작업내용
+1. 화살표 바꿈
+2. axios 손보는중
+3. 검색기능 제작중

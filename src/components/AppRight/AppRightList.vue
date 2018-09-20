@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<article>
-			<br>
+			
 			<br>
 				<button class="button button-rounded button-tiny" v-for="i in 5" v-on:click="showPage(dataTitles[i-1])">
 					{{dataTitles[i-1]}} 
