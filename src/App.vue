@@ -1,15 +1,27 @@
 <template>
   <div id="app">
-    <b-container class="layout">
-      <b-row>
-          <b-col class="left">
-              <AppLeft></AppLeft>
-          </b-col>
-          <b-col class="right">
-              <AppRight v-on:sendPageData="sendPageData"></AppRight>
-          </b-col>
-    </b-row>
-    </b-container>
+    <transition name="welcomeAppear">
+      <div class ="welcome" v-if="welcomeShow">
+        <h1 id="welcomeTitle">LeftAndRight</h1>
+        <p id="welcomeMessage">환영합니다. 언론사를 선택하세요.</p>
+        <button id="chosun" v-on:click="gotoMain('chosun')">조선일보</button>
+        <button id="hani" v-on:click="gotoMain('hani')">한겨레</button>
+      </div>
+    </transition>
+    <transition name="mainAppear">
+      <div v-if="mainShow">
+        <b-container class="layout">
+          <b-row>
+              <b-col class="left">
+                <AppLeft v-bind:propsdata="journalismAddress"></AppLeft>
+              </b-col>
+              <b-col class="right">
+                  <AppRight v-bind:propsdata="journalismAddress" v-on:sendPageData="sendPageData" ></AppRight>
+              </b-col>
+          </b-row>
+        </b-container>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -35,6 +47,10 @@
 
     data(){
       return{
+        journalismAddress:'',
+        journalismName:'',
+        welcomeShow: true,
+        mainShow: false,
         pageData: ''
       }
     },
@@ -44,13 +60,34 @@
       sendPageData(){
         this.pageData = document.getElementById("leftIframe");
         console.log(this.pageData);
+        if(this.journalismAddress=="http://m.hani.co.kr")
+          this.journalismName="hani";
+        else
+          this.journalismName="chosun";
+        console.log(this.journalismAddress);
+        console.log(this.journalismName);
         axios({
           method: 'post',
           url: 'http://find_relation',
-          data: this.pageData
+          data:
+            {
+              journalism: this.journalismName,
+              iframeInfo: this.pageData
+            }
         })
         .then(function(response) {console.log(response);})
         .catch(function(error) {console.log(error);});
+      },
+      gotoMain(receivedJournalism){
+        if(receivedJournalism=="hani")
+        {
+          this.journalismAddress="http://m.hani.co.kr"
+        }
+        else{
+          this.journalismAddress="http://m.chosun.com/"
+        }
+        this.welcomeShow=false;
+        this.mainShow=true;
       }
     }
   }
@@ -63,10 +100,6 @@
   flex-direction: column;
   box-sizing:border-box;
   
-}
-
-.left{
-  font-family: 'Ubuntu', sans-serif;
 }
 
 

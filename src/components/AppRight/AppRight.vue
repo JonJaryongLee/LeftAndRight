@@ -22,7 +22,7 @@
 				<AppRightIframe v-if="rightIframeShow" v-bind:propsdata="rightAddress" ></AppRightIframe>
 			</transition>
 			<transition name="searchAppear">
-				<AppRightSearch v-if="searchShow"></AppRightSearch>
+				<AppRightSearch v-bind:propsdata="journalismName" v-if="searchShow"></AppRightSearch>
 			</transition>
 			<transition name="listAppear">
 				<AppRightList 
@@ -34,7 +34,8 @@
 			<br>
 			<article>
 			<transition name="titleFade">
-				<p v-if="titleShow">조선일보 관련기사를 검색할까요?
+				<p v-if="titleShow">{{
+					journalismName}} 관련기사를 검색할까요?
 				</p>
 			</transition>
 			</article>
@@ -55,6 +56,13 @@
 	import AppRightIframe from './AppRightIframe'
 	import AppRightSearch from './AppRightSearch'
 	export default{
+		props:['propsdata'],
+		mounted(){
+			if(this.propsdata=="http://m.chosun.com/")
+				this.journalismName="한겨레"
+			else
+				this.journalismName="조선일보"
+		},
 		components:{
 			'AppRightList':AppRightList,
 			'AppRightIframe':AppRightIframe,
@@ -70,7 +78,8 @@
 				searchShow:false,
 				listShow:false,
 				rightIframeShow: false,
-				rightAddress:""
+				rightAddress:"",
+				journalismName:''
 			}
 		},
 		methods: {
@@ -110,123 +119,45 @@
 
 <style scoped>
 
-	.titleFade-leave-active {
+	.titleFade-leave-active, .bigBtnFade-leave-active {
 	  transition: opacity 0.4s;
 	}
-	.titleFade-leave-to {
+
+	.titleFade-leave-to, .bigBtnFade-leave-to,
+	.smallBtnAppear-enter, .smallBtnAppear-leave-to,
+	.undoBtnAppear-enter, .undoBtnAppear-leave-to,
+	.listAppear-enter, .listAppear-leave-to,
+	.searchAppear-enter, .searchAppear-leave-to,
+	.iframeAppear-enter, .iframeAppear-leave-to
+	{
 	  opacity: 0;
 	}
 
-	.bigBtnFade-leave-active{
-		transition: opacity 0.4s;
-	}
-	.bigBtnFade-leave-to{
-		opacity: 0;
-	}
-
-	.smallBtnAppear-enter
-	{
-		opacity: 0;
-	}
-
-	.smallBtnAppear-enter-active
+	.smallBtnAppear-enter-active, .undoBtnAppear-enter-active,
+	.listAppear-enter-active, .searchAppear-enter-active
 	{
 		transition: opacity 2s;
 	}
-	.smallBtnAppear-enter-to
+
+	.smallBtnAppear-enter-to, .undoBtnAppear-enter-to,
+	.listAppear-enter-to, .searchAppear-enter-to,
+	.iframeAppear-enter-to
 	{
 		opacity: 1;
 	}
 
-	.smallBtnAppear-leave-active {
+	.smallBtnAppear-leave-active, .undoBtnAppear-leave-active,
+	.listAppear-leave-active, .searchAppear-leave-active,
+	.iframeAppear-leave-active
+	 {
 	  transition: opacity 1s;
-	}
-	.smallBtnAppear-leave-to {
-	  opacity: 0;
-	}
-
-	.undoBtnAppear-enter
-	{
-		opacity: 0;
-	}
-
-	.undoBtnAppear-enter-active
-	{
-		transition: opacity 2s;
-	}
-	.undoBtnAppear-enter-to
-	{
-		opacity: 1;
-	}
-
-	.undoBtnAppear-leave-active {
-	  	transition: opacity 1s;
-	}
-	.undoBtnAppear-leave-to {
-		opacity: 0;
-	}
-
-	.listAppear-enter
-	{
-		opacity: 0;
-	}
-
-	.listAppear-enter-active
-	{
-		transition: opacity 2s;
-	}
-	.listAppear-enter-to
-	{
-		opacity: 1;
-	}
-
-	.listAppear-leave-active {
-	  transition: opacity 1s;
-	}
-	.listAppear-leave-to {
-	  opacity: 0;
-	}
-
-	.searchAppear-enter
-	{
-		opacity: 0;
-	}
-
-	.searchAppear-enter-active
-	{
-		transition: opacity 2s;
-	}
-	.searchAppear-enter-to
-	{
-		opacity: 1;
-	}
-
-	.searchAppear-leave-active {
-	  transition: opacity 1s;
-	}
-	.searchAppear-leave-to {
-	  opacity: 0;
-	}
-
-	.iframeAppear-enter
-	{
-		opacity: 0;
 	}
 
 	.iframeAppear-enter-active
 	{
 		transition: opacity 3s;
 	}
-	.iframeAppear-enter-to
-	{
-		opacity: 1;
-	}
-	.iframeAppear-leave-active {
-	  transition: opacity 1s;
-	}
-	.iframeAppear-leave-to {
-	  opacity: 0;
-	}
+
 
 	.moreNews{
 		height:780px;
@@ -283,4 +214,3 @@
  		 box-shadow: 5px 10px 10px rgba(0,0,0,0.03)
 	}
 </style>
-

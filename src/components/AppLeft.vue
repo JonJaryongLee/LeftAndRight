@@ -14,11 +14,15 @@
 
 <script type="text/javascript">
 	export default{
+    props: ['propsdata'],
+    mounted(){
+      document.getElementById("leftIframe").src=this.propsdata;
+    }
 
 	}
 </script>
 
-<style type="text/css">
+<style scoped>
   .showNews{
     height:780px;
     width:540px;

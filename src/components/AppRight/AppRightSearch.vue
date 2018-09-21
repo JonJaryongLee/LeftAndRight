@@ -9,7 +9,6 @@
       </span>
       
       <modal v-if="showModal" @close="showModal=false">
-        <h3 slot="header">경고</h3>
         <span slot="body" @click="showModal=false">
           검색어를 입력하세요.
           <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
@@ -23,11 +22,20 @@
 <script>
 import Modal from './common/Modal.vue'
 	export default{
+    props:['propsdata'],
+    mounted(){
+      if(this.propsdata=="한겨레")
+        this.journalismName="chosun";
+      else
+        this.journalismName="hani";
+      console.log(this.journalismName);
+    },
     components:{
       Modal: Modal
     },
     data(){
       return {
+        journalismName:'',
         newSearchData:'',
         showModal:false
       }
@@ -36,8 +44,20 @@ import Modal from './common/Modal.vue'
       search(){
         if(this.newSearchData !== "")
         {
-          let value = this.newSearchData && this.newSearchData.trim();
-          localStorage.setItem(this.newSearchData,this.newSearchData);
+          let wordToSearch = this.newSearchData && this.newSearchData.trim();
+        axios({
+          method: 'post',
+          url: 'http://find_relation',
+          data: 
+            {
+              journalism: this.journalismName,
+              iframeInfo: wordToSearch
+            }
+
+        })
+        .then(function(response) {console.log(response);})
+        .catch(function(error) {console.log(error);});
+
           this.clearSearch();
         } else{
           this.showModal = !this.showModal;

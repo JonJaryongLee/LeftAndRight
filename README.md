@@ -102,3 +102,10 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 2. axios 손보는중
 3. 검색기능 제작중
 4. 모달 제작중
+
+## 9월 21일 작업내용
+1. right부분 css내용 확 줄임
+2. 검색어 미입력시 모달 뜨게 함.
+3. 검색어 axios로 전송
+4. 웰컴페이지 제작중
+5. 서버로 전송하는 데이터 수정.

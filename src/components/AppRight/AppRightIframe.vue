@@ -22,7 +22,7 @@
 	}
 </script>
 
-<style scoped>
+<style>
   .showRightNews{
     height:510px;
     width:530px;
