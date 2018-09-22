@@ -109,3 +109,6 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 3. 검색어 axios로 전송
 4. 웰컴페이지 제작중
 5. 서버로 전송하는 데이터 수정.
+
+## 9월 22일 작업내용
+1. 인트로페이지 제작완료. css로 백그라운드 전체를 채우고 싶었으나 그냥 포기
