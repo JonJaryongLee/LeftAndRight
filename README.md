@@ -1,4 +1,4 @@
-# leftandright
+# left-and-right
 
 > A Vue.js project
 
@@ -13,9 +13,21 @@ npm run dev
 
 # build for production with minification
 npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run unit tests
+npm run unit
+
+# run e2e tests
+npm run e2e
+
+# run all tests
+npm test
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 ## 교수님 의견
 
@@ -112,3 +124,6 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ## 9월 22일 작업내용
 1. 인트로페이지 제작완료. css로 백그라운드 전체를 채우고 싶었으나 그냥 포기
+2. 웹팩심플에서 웹팩으로 옮겨버림. 두 가지 문제를 발견함
+	1. 자꾸 unexpected token에러가 발생함. 원인불명
+	2. 조선일보가 최초 아이프레임에 이식되면 모바일로 인식되어져 클릭이 잘 안됨.
