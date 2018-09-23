@@ -23,7 +23,7 @@
 import Modal from './common/Modal.vue'
 	export default{
     props:['propsdata'],
-    mounted(){
+    created(){
       if(this.propsdata=="한겨레")
         this.journalismName="chosun";
       else

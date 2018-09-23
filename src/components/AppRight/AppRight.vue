@@ -57,7 +57,7 @@
 	import AppRightSearch from './AppRightSearch'
 	export default{
 		props:['propsdata'],
-		mounted(){
+		created(){
 			if(this.propsdata=="http://m.chosun.com/")
 				this.journalismName="한겨레"
 			else
