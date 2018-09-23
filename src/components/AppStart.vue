@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="start">
     <transition name="welcomeAppear">
       <div class ="welcome" v-if="welcomeShow">
         <h1 id="welcomeTitle">Left And Right</h1>
