@@ -38,7 +38,6 @@
 
   import AppLeft from './AppLeft.vue'
   import AppRight from './AppRight/AppRight.vue'
-
   
   export default{
     name:'AppStart',
