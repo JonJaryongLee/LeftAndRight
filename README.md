@@ -1,4 +1,4 @@
-# left-and-right
+# leftandrightwebpack
 
 > A Vue.js project
 
@@ -28,22 +28,6 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-## 교수님 의견
-
-김민기 교수님
-커서가 움직임에 따라 단어를 하이라이팅해서 클릭 시 반대편 섹션에 바로 관련기사 검색이 가능하게. 
-
-이수원 교수님
-우선 타겟을 정해야한다. 모든사람인가? 특정인인가?
-현재 두 개의 웹페이지를 섹션에 가두어 띄우는 게 전부다. 단순히 보여주는 것 이상이 필요하다.
-하나의 섹션에서 기사를 클릭하면 다른 섹션에서 관련기사를 자동으로 뜨게 하면 어떨까? 이미지검색, 제목의 특정 단어, 기사 내용안의 단어들을 이용해 알고리즘을 짜서 구현하면 될 것.
-
-12 지동춘
-검색기능이 있었으면 좋겠다. ex)북한 -> 두 개의 영역에 서로다른 언론사의 기사검색결과가 나오게
-스크롤을 동시에 내리면 어떨까?
-두 개의 언론사 UI가 통일되어 있지 않아 사용자에게 매력을 느끼게 하지 못한다. 차라리 주요기사를 크롤링해서 리스트하는 게 나을듯.
-
 
 ## 초기작업내용
 1. Vue.js Webpack Simple로 초기구성을 하였습니다.
@@ -127,3 +111,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 2. 웹팩심플에서 웹팩으로 옮겨버림. 두 가지 문제를 발견함
 	1. 자꾸 unexpected token에러가 발생함. 원인불명
 	2. 조선일보가 최초 아이프레임에 이식되면 모바일로 인식되어져 클릭이 잘 안됨.
+
+## 9월 23일 작업내용
+1. 어제 기술한 두 가지 에러 해결함. vue파일 구조 바꿈.
