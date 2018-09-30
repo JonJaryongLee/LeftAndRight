@@ -108,7 +108,6 @@
     padding: 230px 0;
     border: none;
     text-align: center;
-    background-color:#F6F6F8;
 }
 
 #welcomeTitle{
