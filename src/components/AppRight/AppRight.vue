@@ -160,7 +160,7 @@
 
 
 	.moreNews{
-		height:780px;
+		height:760px;
 		width:540px;
 		border-style:none;
 		background-color: #F6F6F8;

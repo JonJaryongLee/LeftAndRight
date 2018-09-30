@@ -3,7 +3,7 @@
     <h1>Left And Right</h1>
 		<iframe
       src="http://m.hani.co.kr" 
-      height="670px" 
+      height="650px" 
       width="530px" 
       id="leftIframe"
     >
@@ -24,7 +24,7 @@
 
 <style scoped>
   .showNews{
-    height:780px;
+    height:760px;
     width:540px;
     border-style:none;
     background-color: #F6F6F8;

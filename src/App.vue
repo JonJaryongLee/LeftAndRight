@@ -16,5 +16,8 @@ export default {
 </script>
 
 <style>
-
+	#app{
+		position:relative;
+		top:20px;
+	}
 </style>

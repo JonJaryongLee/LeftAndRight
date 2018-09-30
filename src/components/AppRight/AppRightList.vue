@@ -82,7 +82,7 @@
 		float:left;
 		text-align: right;
 		width: 511px;
-		height:100px;
+		height:95px;
 		margin: 10px;
 	}
 </style>
