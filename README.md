@@ -115,3 +115,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## 9월 23일 작업내용
 1. 어제 기술한 두 가지 에러 해결함. vue파일 구조 바꿈.
 2. 웹팩으로 dev서버로 올리는 게 아니라 빌드시켜봄. /dist파일에 저장되나 파일을 클릭한다고 실행되는건 아님. 메모리에 바로 저장된다고 함.
+
+## 9월 30일 작업내용
+1. 초기화면 뒷배경 없애버림
+2. axios연동 성공했으나 iframe정보는 못 보내는중. 일단 search기능에만 집중하기로.
