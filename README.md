@@ -119,3 +119,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## 9월 30일 작업내용
 1. 초기화면 뒷배경 없애버림
 2. axios연동 성공했으나 iframe정보는 못 보내는중. 일단 search기능에만 집중하기로.
+3. 위에 공백 만듦
