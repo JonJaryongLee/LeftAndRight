@@ -47,11 +47,11 @@ import Modal from './common/Modal.vue'
           let wordToSearch = this.newSearchData && this.newSearchData.trim();
         axios({
           method: 'post',
-          url: 'http://find_relation',
+          url: '/search',
           data: 
             {
               journalism: this.journalismName,
-              iframeInfo: wordToSearch
+              keyword: wordToSearch
             }
 
         })
