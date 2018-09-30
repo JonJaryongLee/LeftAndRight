@@ -61,7 +61,8 @@
     methods: {
       sendPageData(){
         this.pageData = document.getElementById("leftIframe");
-        console.log(this.pageData);
+        console.log('pageData: ')
+        console.log(this.pageData)
         if(this.journalismAddress=="http://m.hani.co.kr")
           this.journalismName="hani";
         else
@@ -70,7 +71,7 @@
         console.log(this.journalismName);
         axios({
           method: 'post',
-          url: 'http://find_relation',
+          url: '/find_relation/',
           data:
             {
               journalism: this.journalismName,
