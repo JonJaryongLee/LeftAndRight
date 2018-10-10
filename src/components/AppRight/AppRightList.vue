@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<article>
-			
 			<br>
 				<button class="button button-rounded button-tiny" v-for="i in 5" v-on:click="showPage(dataTitles[i-1])">
 					{{dataTitles[i-1]}} 
@@ -14,50 +13,28 @@
 
 <script>
 	export default{
+		props:['propsdata']
+		,
 		data(){
 			return{
-				articleDatas:
-				[
-					[
-						"'고용참사' 실업자수 1999년 이후 최대…청년부터 4050까지 모두 일자리 줄었다(재종합)",
-						"http://m.chosun.com/svc/article.html?sname=biz&contid=2018091201096",
-						"2018.09.12"
-					],
-					[
-						"실업자 113만명 외환위기후 최대...8월 취업자 증가폭 고작 3000명(종합)",
-						"http://m.chosun.com/svc/article.html?sname=biz&contid=2018091200643",
-						"2018.09.12"
-					],
-					[
-						"8월 청년 실업률 10.0%…1999년 8월 이후 최고",
-						"http://m.chosun.com/svc/article.html?sname=biz&contid=2018091200465",
-						"2018. 9. 12"
-					],
-					[
-						"\"만성질환 넵병\" 오피스 모큐멘터리 '회사가기싫어' 12일 첫 방송",
-						"http://m.chosun.com/svc/article.html?sname=news&contid=2018091000963",
-						"2018. 9. 10"
-					],
-					[
-						"'일본 취업' 바늘구멍은 넓다… 월급봉투는 생각보다 얇다",
-						"http://m.chosun.com/svc/article.html?sname=biz&contid=2018091000007",
-						"2018. 9. 10"
-					]
-				],
-
-				dataTitles:[],
-				dataAddresses:[],
-				dataDates:[]
+				dataTitles:["풍등 날린 스리랑카인 '중대과실'? ... 법조계도 '과하다'","[단독] '정도경영' LG의 탈선... 총수일가 10년간 탈세 거래 연루","김진태 의원이 국감장에 '아기 고양이'를 데려온 이유","대법원이 '서초동 지근거리'명동으로 법원행정처 옮기겠다는데...","'자해만 해도 사형?'... 너무 많은 처벌조항"],
+				dataAddresses:["http://m.hani.co.kr/arti/society/society_general/865203.html?_fr=mt1","http://m.hani.co.kr/arti/economy/economy_general/865149.html","http://m.hani.co.kr/arti/politics/assembly/865204.html","http://m.hani.co.kr/arti/society/society_general/865193.html","http://m.hani.co.kr/arti/society/society_general/865214.html"],
+				dataDates:["2018.10.10","2018.10.10","2018.10.10","2018.10.10","2018.10.10"]
 			}
 
 		},
 		created(){
-			for(let i=0; i<this.articleDatas.length; i++){
-				this.dataTitles.push(this.articleDatas[i][0]);
-				this.dataAddresses.push(this.articleDatas[i][1]);
-				this.dataDates.push(this.articleDatas[i][2]);
+			if(this.propsdata[0][5]){
+				this.dataTitles=[];
+				this.dataAddresses=[];
+				for(let i=0; i<5; i++){
+				this.dataTitles.push(this.propsdata[0][i]);
+				this.dataAddresses.push(this.propsdata[1][i]);
+				}
+				console.log(this.dataAddresses);
 			}
 		},
+
 		methods: {
 			showPage(dataTitle){
 				let address;

@@ -22,12 +22,17 @@
 				<AppRightIframe v-if="rightIframeShow" v-bind:propsdata="rightAddress" ></AppRightIframe>
 			</transition>
 			<transition name="searchAppear">
-				<AppRightSearch v-bind:propsdata="journalismName" v-if="searchShow"></AppRightSearch>
+				<AppRightSearch 
+				v-bind:propsdata="journalismName" 
+				v-on:changeNewsData="changeNewsData" 
+				v-if="searchShow">
+				</AppRightSearch>
 			</transition>
 			<transition name="listAppear">
 				<AppRightList 
 					v-if="listShow"
 					v-on:showPage="showPage"
+					v-bind:propsdata="changedNewsData"
 				></AppRightList>
 			</transition>
 			<br>
@@ -79,7 +84,11 @@
 				listShow:false,
 				rightIframeShow: false,
 				rightAddress:"",
-				journalismName:''
+				journalismName:'',
+				changedNewsTitles:[],
+				changedNewsUrl:[],
+				changedNewsData:[]
+
 			}
 		},
 		methods: {
@@ -108,6 +117,19 @@
 				this.rightIframeShow=false;
 				setTimeout(() => this.searchShow = true, 1200);
 				setTimeout(() => this.listShow = true, 1200);
+			},
+			changeNewsData(receivedTitle,receivedUrl){
+				this.listShow=false;
+				for(let i=0;i<5;i++){
+					this.changedNewsTitles[i]=receivedTitle[i];
+				}
+				for(let i=0;i<5;i++){
+					this.changedNewsUrl[i]=receivedUrl[i];
+				}
+				this.changedNewsData[0]=this.changedNewsTitles;
+				this.changedNewsData[1]=this.changedNewsUrl;
+				this.changedNewsTitles[5]='true';
+				setTimeout(() => this.listShow = true, 1500);
 			}
 		}
 	}

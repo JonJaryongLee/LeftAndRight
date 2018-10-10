@@ -61,13 +61,10 @@
     methods: {
       sendPageData(){
         this.pageData = document.getElementById("leftIframe");
-        console.log(this.pageData);
         if(this.journalismAddress=="http://m.hani.co.kr")
           this.journalismName="hani";
         else
           this.journalismName="chosun";
-        console.log(this.journalismAddress);
-        console.log(this.journalismName);
         axios({
           method: 'post',
           url: 'http://find_relation',

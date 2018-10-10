@@ -120,3 +120,24 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 1. 초기화면 뒷배경 없애버림
 2. axios연동 성공했으나 iframe정보는 못 보내는중. 일단 search기능에만 집중하기로.
 3. 위에 공백 만듦
+
+##10월 10일 작업내용
+1. 서버 테스트중
+2. 제목 맨 마지막에 pdf다운로드 고칠 것
+3. 현재 리스트업되며 보이는 자료가 영 안 예쁨. 정렬방식을 바꾸던지 할 것.
+4. 다음과 같은 에러 발생함
+<!-- vue.esm.js:1741 TypeError: Cannot read property '5' of undefined
+    at a.created (AppRightList.vue:27)
+    at $e (vue.esm.js:2921)
+    at a.t._init (vue.esm.js:4630)
+    at new a (vue.esm.js:4798)
+    at vue.esm.js:4310
+    at init (vue.esm.js:4131)
+    at vue.esm.js:5608
+    at d (vue.esm.js:5555)
+    at a.__patch__ (vue.esm.js:6130)
+    at a.t._update (vue.esm.js:2670)
+ -->
+    해당 에러 원인분석에 힘쓸 것.
+5. 현재는 검색기능에 집중하고 있으며, 해당 아이프레임 정보를 받아오는 것은 미루고 있음. 아마 객체 자체를 전달해서 전송이 안 되는 게 아닐까 생각되는데, 문자열로 통째로 바꿔서 보내보도록 노력해 볼 것.
+
