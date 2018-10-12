@@ -1,13 +1,5 @@
 <template>
 	<div class="moreNews shadow">
-		<transition name="smallBtnAppear">
-			<span v-if="smallBtnShow" class="smallNewsContainer">
-				<button class="smallNewsBtn button button-box button-tiny" v-on:click="smallSendPageData">
-					<i class="far fa-newspaper"></i>
-				</button>
-			</span>
-		</transition>
-
 		<transition name="undoBtnAppear">
 			<span v-if="undoShow" class="undoContainer">
 				<button class="undoBtn button button-box button-tiny" v-on:click="returnToList">
@@ -32,7 +24,8 @@
 				<AppRightList 
 					v-if="listShow"
 					v-on:showPage="showPage"
-					v-bind:propsdata="changedNewsData"
+					v-bind:newsData="newsData"
+					v-bind:journalismName="journalismName"
 				></AppRightList>
 			</transition>
 			<br>
@@ -48,7 +41,7 @@
 			<br>
 		<transition name="bigBtnFade">
 			<span v-if="bigBtnShow" class="bigNewsContainer">
-				<button class="bigNewsBtn button button-box button-tiny" v-on:click="bigSendPageData">
+				<button class="bigNewsBtn button button-box button-tiny" v-on:click="bigButtonActive">
 					<i class="far fa-newspaper"></i>
 				</button>
 			</span>
@@ -64,9 +57,14 @@
 		props:['propsdata'],
 		created(){
 			if(this.propsdata=="http://m.chosun.com/")
-				this.journalismName="한겨레"
-			else
-				this.journalismName="조선일보"
+			{
+				this.journalismName="한겨레";
+				this.newsData[1]=this.journalismName;
+			}
+			else{
+				this.journalismName="조선일보";
+				this.newsData[1]=this.journalismName;
+			}
 		},
 		components:{
 			'AppRightList':AppRightList,
@@ -78,7 +76,6 @@
 			return{
 				bigBtnShow:true,
 				titleShow:true,
-				smallBtnShow:false,
 				undoShow:false,
 				searchShow:false,
 				listShow:false,
@@ -87,48 +84,42 @@
 				journalismName:'',
 				changedNewsTitles:[],
 				changedNewsUrl:[],
-				changedNewsData:[]
+				changedNewsDate:[],
+				newsData:[] // 인덱스[0]번은 플래그, [1]번은 데일리 헤드라인 나열을 위한 언론사 이름
 
 			}
 		},
 		methods: {
-			bigSendPageData(){
+			bigButtonActive(){
 				this.titleShow=false;
 				this.bigBtnShow=false;
-				this.smallBtnShow=true;
-				this.$emit('sendPageData')
 				setTimeout(() => this.searchShow = true, 450);
 				setTimeout(() => this.listShow = true, 450);
-			},
-			smallSendPageData(){
-				this.$emit('sendPageData')
 			},
 			showPage(address){
 				this.listShow=false;
 				this.searchShow=false;
-				this.smallBtnShow=false;
 				setTimeout(() => this.undoShow = true, 1200);
 				this.rightAddress=address;
 				setTimeout(() => this.rightIframeShow = true, 1200);
 			},
 			returnToList(){
 				this.undoShow=false;
-				setTimeout(() => this.smallBtnShow = true, 1200);
 				this.rightIframeShow=false;
 				setTimeout(() => this.searchShow = true, 1200);
 				setTimeout(() => this.listShow = true, 1200);
 			},
-			changeNewsData(receivedTitle,receivedUrl){
+			changeNewsData(receivedTitle,receivedUrl,receivedDate){
 				this.listShow=false;
 				for(let i=0;i<5;i++){
 					this.changedNewsTitles[i]=receivedTitle[i];
-				}
-				for(let i=0;i<5;i++){
 					this.changedNewsUrl[i]=receivedUrl[i];
+					this.changedNewsDate[i]=receivedDate[i];
 				}
-				this.changedNewsData[0]=this.changedNewsTitles;
-				this.changedNewsData[1]=this.changedNewsUrl;
-				this.changedNewsTitles[5]='true';
+				this.newsData[0]='true';
+				this.newsData[2]=this.changedNewsTitles;
+				this.newsData[3]=this.changedNewsUrl;
+				this.newsData[4]=this.changedNewsDate;
 				setTimeout(() => this.listShow = true, 1500);
 			}
 		}
@@ -146,7 +137,6 @@
 	}
 
 	.titleFade-leave-to, .bigBtnFade-leave-to,
-	.smallBtnAppear-enter, .smallBtnAppear-leave-to,
 	.undoBtnAppear-enter, .undoBtnAppear-leave-to,
 	.listAppear-enter, .listAppear-leave-to,
 	.searchAppear-enter, .searchAppear-leave-to,
@@ -155,20 +145,20 @@
 	  opacity: 0;
 	}
 
-	.smallBtnAppear-enter-active, .undoBtnAppear-enter-active,
+	.undoBtnAppear-enter-active,
 	.listAppear-enter-active, .searchAppear-enter-active
 	{
 		transition: opacity 2s;
 	}
 
-	.smallBtnAppear-enter-to, .undoBtnAppear-enter-to,
+	.undoBtnAppear-enter-to,
 	.listAppear-enter-to, .searchAppear-enter-to,
 	.iframeAppear-enter-to
 	{
 		opacity: 1;
 	}
 
-	.smallBtnAppear-leave-active, .undoBtnAppear-leave-active,
+	.undoBtnAppear-leave-active,
 	.listAppear-leave-active, .searchAppear-leave-active,
 	.iframeAppear-leave-active
 	 {
@@ -210,17 +200,6 @@
 		
 	}
 
-	.smallNewsContainer{
-		border-radius: 10px 10px 10px 10px;
-		float: right;
-
-	}
-	.smallNewsBtn{
-		width: 90px;
-		height: 80px;
-		font-size: 5rem;
-		
-	}
 	.undoContainer{
 		border-radius: 10px 10px 10px 10px;
 		float: right;

@@ -57,26 +57,23 @@ import Modal from './common/Modal.vue'
               journalism: this.journalismName,
               keyword: wordToSearch
             }
-
         })
         .then(response =>{
           this.receivedTitle = [];
           this.receivedUrl = [];
+          this.receivedDate = [];
           for(let i=0;i<5;i++){
             this.receivedTitle.push(response.data[i].title);
             this.receivedUrl.push(response.data[i].url);
+            this.receivedDate.push(response.data[i].date);
             }
-            this.$emit('changeNewsData',this.receivedTitle,this.receivedUrl);
+            this.$emit('changeNewsData',this.receivedTitle,this.receivedUrl,this.receivedDate);
           })
         .catch(function(error) {console.log(error);});
-          this.clearSearch();
         } else{
           this.showModal = !this.showModal;
         }
         
-    },
-    clearSearch() {
-      this.newSearchData='';
     }
 	}
 }

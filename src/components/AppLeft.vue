@@ -33,7 +33,7 @@
     font-family: 'Ubuntu', sans-serif;
     font-size:4rem;
     font-weight: 900;
-    color: orange;
+    color: #4f5b66;
     padding: 10px;
   }
   #leftIframe
