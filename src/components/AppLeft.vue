@@ -44,6 +44,19 @@
   {
   box-shadow: 5px 10px 10px rgba(0,0,0,0.03)
   }
+  @media(max-width: 1025px){
+    .showNews{
+      width:450px;
+      height: 730px;
+    }
+    iframe{
+      width: 450px;
+      height: 620px;
+    }
+    h1{
+      font-size:3.5rem;
+    }
+  }
 
 </style>
 

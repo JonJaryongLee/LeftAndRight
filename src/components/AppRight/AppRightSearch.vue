@@ -126,6 +126,11 @@ import Modal from './common/Modal.vue'
   .closeModalBtn{
     color:orange;
   }
+  @media(max-width: 1025px){
+    .searchBox input{
+      width:300px;
+    }
+  }
 
 </style>
 

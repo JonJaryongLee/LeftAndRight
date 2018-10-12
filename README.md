@@ -151,3 +151,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 3. 글자 정렬이 심각하게 안 예쁘다.
 4. 반응형 작업 계속 할 것
 5. 파비콘 작업할 것
+6. 현재 아이패드화면으로 작업중인데 데스크탑 화면 오른쪽 위에 쓸떼없는 공백이 생기는 문제 발견, 추후 수정할 것.

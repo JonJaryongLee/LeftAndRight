@@ -82,4 +82,11 @@
 		height:95px;
 		margin: 10px;
 	}
+	@media(max-width: 1025px){
+		button{
+			width:430px;
+			height:90px;
+			font-size:1.2rem;
+		}
+	}
 </style>

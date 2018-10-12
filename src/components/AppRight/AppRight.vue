@@ -7,9 +7,7 @@
 				</button>
 			</span>
 		</transition>
-			<br>
-			<br>
-			<br>
+			<p id="undoBtnUnderSpace"></p>
 			<transition name="iframeAppear">
 				<AppRightIframe v-if="rightIframeShow" v-bind:propsdata="rightAddress" ></AppRightIframe>
 			</transition>
@@ -32,7 +30,7 @@
 			<br>
 			<article>
 			<transition name="titleFade">
-				<p v-if="titleShow">{{
+				<p id="searchQuestion" v-if="titleShow">{{
 					journalismName}} 관련기사를 검색할까요?
 				</p>
 			</transition>
@@ -213,5 +211,18 @@
 	}
 	.shadow{
  		 box-shadow: 5px 10px 10px rgba(0,0,0,0.03)
+	}
+
+	@media(max-width:1025px){
+		.moreNews{
+			width: 450px;
+			height:730px;
+		}
+		#searchQuestion{
+			font-size:1.7rem;
+		}
+		#undoBtnUnderSpace{
+			height:50px;
+		}
 	}
 </style>

@@ -39,6 +39,16 @@
     height: 32px;
   }
 
+  @media(max-width: 1025px){
+    .showRightNews{
+      width:450px;
+    }
+    iframe{
+      width: 450px;
+      height:620px;
+    }
+  }
+
 </style>
 
 
