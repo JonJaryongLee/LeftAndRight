@@ -86,7 +86,7 @@
 }
 
 .welcome{
-    padding: 230px 0;
+    margin:200px;
     border: none;
     text-align: center;
 }
@@ -125,14 +125,6 @@
 
 .mainAppear-enter-to{
   opacity: 1;
-}
-
-@media (max-width:1025px){
-  #mobileDirection{
-    font-family: 'Nanum Barun Gothic', sans-serif;
-    font-size:1rem;
-    color:red;
-  }
 }
 
 

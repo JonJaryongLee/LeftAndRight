@@ -7,7 +7,6 @@
 				</button>
 			</span>
 		</transition>
-			<p id="undoBtnUnderSpace"></p>
 			<transition name="iframeAppear">
 				<AppRightIframe v-if="rightIframeShow" v-bind:propsdata="rightAddress" ></AppRightIframe>
 			</transition>
@@ -26,17 +25,18 @@
 					v-bind:journalismName="journalismName"
 				></AppRightList>
 			</transition>
-			<br>
-			<br>
+
 			<article>
 			<transition name="titleFade">
-				<p id="searchQuestion" v-if="titleShow">{{
+			    <div v-if="titleShow">
+			   		<p id="questionUpperEmpty"></p>
+					<p id="searchQuestion">{{
 					journalismName}} 관련기사를 검색할까요?
-				</p>
+					</p>
+				</div>
 			</transition>
 			</article>
-			<br>
-			<br>
+
 		<transition name="bigBtnFade">
 			<span v-if="bigBtnShow" class="bigNewsContainer">
 				<button class="bigNewsBtn button button-box button-tiny" v-on:click="bigButtonActive">
@@ -97,7 +97,7 @@
 			showPage(address){
 				this.listShow=false;
 				this.searchShow=false;
-				setTimeout(() => this.undoShow = true, 1200);
+				setTimeout(() => this.undoShow = true, 3500);
 				this.rightAddress=address;
 				setTimeout(() => this.rightIframeShow = true, 1200);
 			},
@@ -182,6 +182,11 @@
 		padding: 50px;
 		
 	}
+	#questionUpperEmpty{
+		height:100px;
+
+	}
+
 
 	.bigNewsContainer{
 		 border-radius: 10px 10px 10px 10px;
@@ -213,16 +218,4 @@
  		 box-shadow: 5px 10px 10px rgba(0,0,0,0.03)
 	}
 
-	@media(max-width:1025px){
-		.moreNews{
-			width: 450px;
-			height:730px;
-		}
-		#searchQuestion{
-			font-size:1.7rem;
-		}
-		#undoBtnUnderSpace{
-			height:50px;
-		}
-	}
 </style>

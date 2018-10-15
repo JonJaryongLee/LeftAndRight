@@ -1,10 +1,9 @@
 <template>
 	<div>
 		<article>
-			<br>
+
 				<button class="button button-rounded button-tiny" v-for="i in 5" v-on:click="showPage(dataTitles[i-1])">
 					{{dataTitles[i-1]}} 
-					<br> 
 					<b-badge>{{dataDates[i-1]}}</b-badge>
 				</button>
 		</article>
@@ -82,11 +81,5 @@
 		height:95px;
 		margin: 10px;
 	}
-	@media(max-width: 1025px){
-		button{
-			width:430px;
-			height:90px;
-			font-size:1.2rem;
-		}
-	}
+
 </style>
