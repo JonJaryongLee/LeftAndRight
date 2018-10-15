@@ -4,7 +4,7 @@
     <article class="emptyBox"></article>
 		<iframe
       	src="http://m.chosun.com/" 
-      	height="670px" 
+      	height="650px" 
       	width="530px" 
       	id="rightIframe"
     	>
@@ -24,7 +24,7 @@
 
 <style>
   .showRightNews{
-    height:510px;
+    height:500px;
     width:530px;
     border-style:none;
     background-color: #F6F6F8;
@@ -36,8 +36,10 @@
   }
 
   .emptyBox{
-    height: 34px;
+    height: 105px;
   }
+
+
 
 </style>
 

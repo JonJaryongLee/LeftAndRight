@@ -1,6 +1,7 @@
 <template>
   <div>
-    <article class="searchBoxUpperEmpty"></article>
+    <article class="searchBoxUpperEmpty">
+    </article>
     <article class="searchBox shadow">
       <input type="text" v-model="newSearchData" placeholder="검색어를 입력하세요" v-on:keyup.enter="search">
       <span class="searchContainer" v-on:click="search">
@@ -28,7 +29,6 @@ import Modal from './common/Modal.vue'
         this.journalismName="chosun";
       else
         this.journalismName="hani";
-      console.log(this.journalismName);
     },
     components:{
       Modal: Modal
@@ -37,7 +37,9 @@ import Modal from './common/Modal.vue'
       return {
         journalismName:'',
         newSearchData:'',
-        showModal:false
+        showModal:false,
+        receivedTitle:[],
+        receivedUrl:[]
       }
     },
     methods:{
@@ -45,27 +47,33 @@ import Modal from './common/Modal.vue'
         if(this.newSearchData !== "")
         {
           let wordToSearch = this.newSearchData && this.newSearchData.trim();
+
         axios({
           method: 'post',
-          url: '/search',
+          // url: '/search',
+          url: '/search_web',
           data: 
             {
               journalism: this.journalismName,
               keyword: wordToSearch
             }
-
         })
-        .then(function(response) {console.log(response);})
+        .then(response =>{
+          this.receivedTitle = [];
+          this.receivedUrl = [];
+          this.receivedDate = [];
+          for(let i=0;i<5;i++){
+            this.receivedTitle.push(response.data[i].title);
+            this.receivedUrl.push(response.data[i].url);
+            this.receivedDate.push(response.data[i].date);
+            }
+            this.$emit('changeNewsData',this.receivedTitle,this.receivedUrl,this.receivedDate);
+          })
         .catch(function(error) {console.log(error);});
-
-          this.clearSearch();
         } else{
           this.showModal = !this.showModal;
         }
         
-    },
-    clearSearch() {
-      this.newSearchData='';
     }
 	}
 }
@@ -77,7 +85,7 @@ import Modal from './common/Modal.vue'
   }
 
   .searchBoxUpperEmpty{
-    height:34px;
+    height:100px;
   }
   .searchBox{
     background: white;
@@ -118,6 +126,7 @@ import Modal from './common/Modal.vue'
   .closeModalBtn{
     color:orange;
   }
+
 
 </style>
 

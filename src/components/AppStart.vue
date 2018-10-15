@@ -4,6 +4,7 @@
       <div class ="welcome" v-if="welcomeShow">
         <h1 id="welcomeTitle">Left And Right</h1>
         <p id="welcomeMessage">환영합니다. 언론사를 선택하세요.</p>
+        <p id="mobileDirection">화면을 가로모드로 바꿔주세요</p>
         <button class="chosun button button-glow button-rounded button-caution" v-on:click="gotoMain('chosun')">조선일보</button>
         <button class="hani button button-glow button-rounded button-highlight" v-on:click="gotoMain('hani')">&nbsp&nbsp한겨레&nbsp&nbsp</button>
         
@@ -59,28 +60,6 @@
 
 
     methods: {
-      sendPageData(){
-        this.pageData = document.getElementById("leftIframe");
-        console.log('pageData: ')
-        console.log(this.pageData)
-        if(this.journalismAddress=="http://m.hani.co.kr")
-          this.journalismName="hani";
-        else
-          this.journalismName="chosun";
-        console.log(this.journalismAddress);
-        console.log(this.journalismName);
-        axios({
-          method: 'post',
-          url: '/find_relation/',
-          data:
-            {
-              journalism: this.journalismName,
-              iframeInfo: this.pageData
-            }
-        })
-        .then(function(response) {console.log(response);})
-        .catch(function(error) {console.log(error);});
-      },
       gotoMain(receivedJournalism){
         if(receivedJournalism=="hani")
         {
@@ -98,6 +77,7 @@
 
 <style>
 
+
 .layout{
   display:flex;
   flex-direction: column;
@@ -106,7 +86,7 @@
 }
 
 .welcome{
-    padding: 230px 0;
+    margin:200px;
     border: none;
     text-align: center;
 }
@@ -115,13 +95,19 @@
     font-family: 'Ubuntu', sans-serif;
     font-size:6rem;
     font-weight: 900;
-    color: orange;
+    color: #4f5b66;
   }
 
 #welcomeMessage{
   font-family:'Nanum Barun Gothic', sans-serif;
   font-size:2rem;
   padding: 50px;
+}
+
+#mobileDirection{
+  font-family: 'Nanum Barun Gothic', sans-serif;
+  color: #FFFFFF;
+  font-size:0.1rem;
 }
 
 .hani, .chosun {
